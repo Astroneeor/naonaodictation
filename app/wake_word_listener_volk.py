@@ -19,7 +19,7 @@ def is_fuzzy_match(transcript, wake_phrases, threshold=0.75):
             return True
     return False
 
-def listen_for_wake_word(callback, wake_phrases=["now now"]):
+def listen_for_wake_word(callback, wake_phrases=["now now", "nao nao"]):
     print("🔊 Loading Vosk model...")
     model = Model("models/vosk-model-small-en-us-0.15")
 

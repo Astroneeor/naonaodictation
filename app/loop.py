@@ -1,4 +1,4 @@
-from app.wake_word_listener import listen_for_wake_word
+from app.wake_word_listener_porc import listen_for_wake_word
 from app.main import handle_command
 
 def naonao_loop():
