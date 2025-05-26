@@ -1,0 +1,10 @@
+pvporcupine
+sounddevice
+openai-whisper
+torch
+pyautogui
+pyaudio
+pystray
+Pillow
+pyperclip
+pygetwindow
