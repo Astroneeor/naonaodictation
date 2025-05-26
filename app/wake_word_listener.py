@@ -1,9 +1,17 @@
+import os
+from dotenv import load_dotenv
 from pvporcupine import create
 import sounddevice as sd
 import struct
 
+load_dotenv()
+ACCESS_KEY = os.getenv("PV_ACCESS_KEY")
+
 def listen_for_wake_word(callback):
-    porcupine = create(keywords=["NaoNao"])
+    porcupine = create(
+        access_key=ACCESS_KEY,
+        keyword_paths=["app/naonao_windows.ppn"]
+    )
     stream = sd.InputStream(channels=1, samplerate=porcupine.sample_rate, dtype='int16')
     with stream:
         while True:
