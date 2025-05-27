@@ -1,5 +1,3 @@
-# main.py
-
 from app.transcriber import transcribe_audio
 from app.typer import type_text
 import sounddevice as sd
