@@ -1,12 +1,31 @@
+# Python
 __pycache__/
 *.pyc
 *.wav
 *.log
 temp_audio.wav
 venv/
+*.spec
+
+# Environment
 .env
+
+# Build output
 build/
 dist/
-*.spec
+out/
+.vite/
+
+# Dependencies
+node_modules/
+
+# Data
 data/
-node_modules
+
+# Backups
+python-backup-*/
+*.zip
+
+# Editor / tooling
+.claude/
+.vscode/
