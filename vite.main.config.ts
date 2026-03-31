@@ -17,7 +17,6 @@ export default defineConfig({
         "electron",
         "electron-log",
         "electron-squirrel-startup",
-        "dotenv",
         "@picovoice/porcupine-node",
         "@picovoice/pvrecorder-node",
         "node-key-sender",
