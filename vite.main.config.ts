@@ -6,24 +6,30 @@ export default defineConfig({
     alias: {
       "@": resolve(__dirname, "./src"),
     },
-    // browserField must be false for Electron main process
     browserField: false,
     mainFields: ['module', 'jsnext:main', 'jsnext'],
   },
   build: {
     rollupOptions: {
       external: [
-        // Externalize ALL node modules for main process
+        // Electron runtime - provided by the Electron binary
         "electron",
-        "electron-log",
-        "electron-squirrel-startup",
+        // Native addons (.node binaries) - cannot be bundled
         "@picovoice/porcupine-node",
         "@picovoice/pvrecorder-node",
         "node-key-sender",
-        "uuid",
+        // Node.js built-ins - provided at runtime
         "path",
         "fs",
         "child_process",
+        "os",
+        "crypto",
+        "events",
+        "stream",
+        "util",
+        "assert",
+        "url",
+        "buffer",
       ],
       output: {
         format: 'cjs',

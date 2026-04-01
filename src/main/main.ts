@@ -1,9 +1,11 @@
-// Load environment variables from .env file
-import dotenv from "dotenv";
-dotenv.config();
-
 import { app, BrowserWindow, ipcMain, Tray, Menu, globalShortcut } from "electron";
 import path from "path";
+// Load .env — check resources path (packaged) then fall back to CWD (dev)
+import dotenv from "dotenv";
+dotenv.config({ path: path.join(process.resourcesPath ?? "", ".env") });
+if (!process.env.PORCUPINE_ACCESS_KEY) {
+  dotenv.config(); // fallback: looks in CWD
+}
 import started from "electron-squirrel-startup";
 import log from "electron-log";
 import { WakeWordService } from "./services/wake-word-service.js";
